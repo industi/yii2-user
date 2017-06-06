@@ -16,13 +16,15 @@ use dektrium\user\migrations\Migration;
  */
 class m140830_171933_fix_ip_field extends Migration
 {
+    private $userTN = 'usrUser';
+
     public function up()
     {
-        $this->alterColumn('{{%user}}', 'registration_ip', $this->bigInteger());
+        $this->alterColumn($this->userTN, 'registration_ip', $this->bigInteger());
     }
 
     public function down()
     {
-        $this->alterColumn('{{%user}}', 'registration_ip', $this->integer());
+        $this->alterColumn($this->userTN, 'registration_ip', $this->integer());
     }
 }

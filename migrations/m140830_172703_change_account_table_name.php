@@ -16,13 +16,16 @@ use dektrium\user\migrations\Migration;
  */
 class m140830_172703_change_account_table_name extends Migration
 {
+    private $accountTN = 'usrAccount';
+    private $socialAccountTN = 'usrSocialAccount';
+
     public function up()
     {
-        $this->renameTable('{{%account}}', '{{%social_account}}');
+        $this->renameTable($this->accountTN, $this->socialAccountTN);
     }
 
     public function down()
     {
-        $this->renameTable('{{%social_account}}', '{{%account}}');
+        $this->renameTable($this->socialAccountTN, $this->accountTN);
     }
 }

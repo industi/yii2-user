@@ -16,9 +16,12 @@ use dektrium\user\migrations\Migration;
  */
 class m140209_132017_init extends Migration
 {
+    private $userTN = 'usrUser';
+    private $profileTN = 'usrProfile';
+
     public function up()
     {
-        $this->createTable('{{%user}}', [
+        $this->createTable($this->userTN, [
             'id'                   => $this->primaryKey(),
             'username'             => $this->string(25)->notNull(),
             'email'                => $this->string(255)->notNull(),
@@ -38,12 +41,12 @@ class m140209_132017_init extends Migration
             'updated_at'           => $this->integer()->notNull(),
         ], $this->tableOptions);
 
-        $this->createIndex('{{%user_unique_username}}', '{{%user}}', 'username', true);
-        $this->createIndex('{{%user_unique_email}}', '{{%user}}', 'email', true);
-        $this->createIndex('{{%user_confirmation}}', '{{%user}}', 'id, confirmation_token', true);
-        $this->createIndex('{{%user_recovery}}', '{{%user}}', 'id, recovery_token', true);
+        $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
+        $this->createIndex('{{%user_unique_email}}', $this->userTN, 'email', true);
+        $this->createIndex('{{%user_confirmation}}', $this->userTN, 'id, confirmation_token', true);
+        $this->createIndex('{{%user_recovery}}', $this->userTN, 'id, recovery_token', true);
 
-        $this->createTable('{{%profile}}', [
+        $this->createTable($this->profileTN, [
             'user_id'        => $this->integer()->notNull()->append('PRIMARY KEY'),
             'name'           => $this->string(255)->null(),
             'public_email'   => $this->string(255)->null(),
@@ -54,12 +57,12 @@ class m140209_132017_init extends Migration
             'bio'            => $this->text()->null(),
         ], $this->tableOptions);
 
-        $this->addForeignKey('{{%fk_user_profile}}', '{{%profile}}', 'user_id', '{{%user}}', 'id', $this->cascade, $this->restrict);
+        $this->addForeignKey('{{%fk_user_profile}}', $this->profileTN, 'user_id', $this->userTN, 'id', $this->cascade, $this->restrict);
     }
 
     public function down()
     {
-        $this->dropTable('{{%profile}}');
-        $this->dropTable('{{%user}}');
+        $this->dropTable($this->profileTN);
+        $this->dropTable($this->userTN);
     }
 }

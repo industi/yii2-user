@@ -16,43 +16,46 @@ use dektrium\user\migrations\Migration;
  */
 class m140504_113157_update_tables extends Migration
 {
+    private $userTN = 'usrUser';
+    private $accountTN = 'usrAccount';
+
     public function up()
     {
         // user table
-        $this->dropIndex('{{%user_confirmation}}', '{{%user}}');
-        $this->dropIndex('{{%user_recovery}}', '{{%user}}');
-        $this->dropColumn('{{%user}}', 'confirmation_token');
-        $this->dropColumn('{{%user}}', 'confirmation_sent_at');
-        $this->dropColumn('{{%user}}', 'recovery_token');
-        $this->dropColumn('{{%user}}', 'recovery_sent_at');
-        $this->dropColumn('{{%user}}', 'logged_in_from');
-        $this->dropColumn('{{%user}}', 'logged_in_at');
-        $this->renameColumn('{{%user}}', 'registered_from', 'registration_ip');
-        $this->addColumn('{{%user}}', 'flags', $this->integer()->notNull()->defaultValue(0));
+        $this->dropIndex('{{%user_confirmation}}', $this->userTN);
+        $this->dropIndex('{{%user_recovery}}', $this->userTN);
+        $this->dropColumn($this->userTN, 'confirmation_token');
+        $this->dropColumn($this->userTN, 'confirmation_sent_at');
+        $this->dropColumn($this->userTN, 'recovery_token');
+        $this->dropColumn($this->userTN, 'recovery_sent_at');
+        $this->dropColumn($this->userTN, 'logged_in_from');
+        $this->dropColumn($this->userTN, 'logged_in_at');
+        $this->renameColumn($this->userTN, 'registered_from', 'registration_ip');
+        $this->addColumn($this->userTN, 'flags', $this->integer()->notNull()->defaultValue(0));
 
         // account table
-        $this->renameColumn('{{%account}}', 'properties', 'data');
+        $this->renameColumn($this->accountTN, 'properties', 'data');
     }
 
     public function down()
     {
         // account table
-        $this->renameColumn('{{%account}}', 'data', 'properties');
+        $this->renameColumn($this->accountTN, 'data', 'properties');
 
         // user table
         if ($this->dbType == 'sqlsrv') {
             // this is needed because we need to drop the default constraint first
-            $this->dropColumnConstraints('{{%user}}', 'flags');
+            $this->dropColumnConstraints($this->userTN, 'flags');
         }
-        $this->dropColumn('{{%user}}', 'flags');
-        $this->renameColumn('{{%user}}', 'registration_ip', 'registered_from');
-        $this->addColumn('{{%user}}', 'logged_in_at', $this->integer());
-        $this->addColumn('{{%user}}', 'logged_in_from', $this->integer());
-        $this->addColumn('{{%user}}', 'recovery_sent_at', $this->integer());
-        $this->addColumn('{{%user}}', 'recovery_token', $this->string(32));
-        $this->addColumn('{{%user}}', 'confirmation_sent_at', $this->integer());
-        $this->addColumn('{{%user}}', 'confirmation_token', $this->string(32));
-        $this->createIndex('{{%user_confirmation}}', '{{%user}}', 'id, confirmation_token', true);
-        $this->createIndex('{{%user_recovery}', '{{%user}}', 'id, recovery_token', true);
+        $this->dropColumn($this->userTN, 'flags');
+        $this->renameColumn($this->userTN, 'registration_ip', 'registered_from');
+        $this->addColumn($this->userTN, 'logged_in_at', $this->integer());
+        $this->addColumn($this->userTN, 'logged_in_from', $this->integer());
+        $this->addColumn($this->userTN, 'recovery_sent_at', $this->integer());
+        $this->addColumn($this->userTN, 'recovery_token', $this->string(32));
+        $this->addColumn($this->userTN, 'confirmation_sent_at', $this->integer());
+        $this->addColumn($this->userTN, 'confirmation_token', $this->string(32));
+        $this->createIndex('{{%user_confirmation}}', $this->userTN, 'id, confirmation_token', true);
+        $this->createIndex('{{%user_recovery}', $this->userTN, 'id, recovery_token', true);
     }
 }

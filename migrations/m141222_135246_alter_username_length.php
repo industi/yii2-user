@@ -13,33 +13,35 @@ use dektrium\user\migrations\Migration;
 
 class m141222_135246_alter_username_length extends Migration
 {
+    private $userTN = 'usrUser';
+
     public function up()
     {
         if ($this->dbType == 'sqlsrv') {
-            $this->dropIndex('{{%user_unique_username}}', '{{%user}}');
+            $this->dropIndex('{{%user_unique_username}}', $this->userTN);
         }
         if ($this->dbType == 'pgsql') {
-            $this->alterColumn('{{%user}}', 'username', 'SET NOT NULL');
+            $this->alterColumn($this->userTN, 'username', 'SET NOT NULL');
         } else {
-            $this->alterColumn('{{%user}}', 'username', $this->string(255)->notNull());
+            $this->alterColumn($this->userTN, 'username', $this->string(255)->notNull());
         }
         if ($this->dbType == 'sqlsrv') {
-            $this->createIndex('{{%user_unique_username}}', '{{%user}}', 'username', true);
+            $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
         }
     }
 
     public function down()
     {
         if ($this->dbType == 'sqlsrv') {
-            $this->dropIndex('{{%user_unique_username}}', '{{%user}}');
+            $this->dropIndex('{{%user_unique_username}}', $this->userTN);
         }
         if ($this->dbType == 'pgsql') {
-            $this->alterColumn('{{%user}}', 'username', 'DROP NOT NULL');
+            $this->alterColumn($this->userTN, 'username', 'DROP NOT NULL');
         } else {
-            $this->alterColumn('{{%user}}', 'username', $this->string(255)->notNull());
+            $this->alterColumn($this->userTN, 'username', $this->string(255)->notNull());
         }
         if ($this->dbType == 'sqlsrv') {
-            $this->createIndex('{{%user_unique_username}}', '{{%user}}', 'username', true);
+            $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
         }
     }
 }

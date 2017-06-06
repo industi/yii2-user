@@ -13,17 +13,19 @@ use dektrium\user\migrations\Migration;
 
 class m150623_212711_fix_username_notnull extends Migration
 {
+    private $userTN = 'usrUser';
+
     public function up()
     {
         if ($this->dbType == 'pgsql') {
-            $this->alterColumn('{{%user}}', 'username', 'SET NOT NULL');
+            $this->alterColumn($this->userTN, 'username', 'SET NOT NULL');
         } else {
             if ($this->dbType == 'sqlsrv') {
-                $this->dropIndex('{{%user_unique_username}}', '{{%user}}');
+                $this->dropIndex('{{%user_unique_username}}', $this->userTN);
             }
-            $this->alterColumn('{{%user}}', 'username', $this->string(255)->notNull());
+            $this->alterColumn($this->userTN, 'username', $this->string(255)->notNull());
             if ($this->dbType == 'sqlsrv') {
-                $this->createIndex('{{%user_unique_username}}', '{{%user}}', 'username', true);
+                $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
             }
         }
     }
@@ -31,14 +33,14 @@ class m150623_212711_fix_username_notnull extends Migration
     public function down()
     {
         if ($this->dbType == "pgsql") {
-            $this->alterColumn('{{%user}}', 'username', 'DROP NOT NULL');
+            $this->alterColumn($this->userTN, 'username', 'DROP NOT NULL');
         } else {
             if ($this->dbType == 'sqlsrv') {
-                $this->dropIndex('{{%user_unique_username}}', '{{%user}}');
+                $this->dropIndex('{{%user_unique_username}}', $this->userTN);
             }
-            $this->alterColumn('{{%user}}', 'username', $this->string(255)->null());
+            $this->alterColumn($this->userTN, 'username', $this->string(255)->null());
             if ($this->dbType == 'sqlsrv') {
-                $this->createIndex('{{%user_unique_username}}', '{{%user}}', 'username', true);
+                $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
             }
         }
     }
