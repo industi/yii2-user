@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 class m141222_135246_alter_username_length extends Migration
 {

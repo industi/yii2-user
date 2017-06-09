@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 class m150623_212711_fix_username_notnull extends Migration
 {

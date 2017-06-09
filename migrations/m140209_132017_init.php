@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com
@@ -41,6 +41,7 @@ class m140209_132017_init extends Migration
             'updated_at'           => $this->integer()->notNull(),
         ], $this->tableOptions);
 
+        // @TODO zaimplementowac tworzenie indeksów w AppEngine
         $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
         $this->createIndex('{{%user_unique_email}}', $this->userTN, 'email', true);
         $this->createIndex('{{%user_confirmation}}', $this->userTN, 'id, confirmation_token', true);
@@ -57,7 +58,7 @@ class m140209_132017_init extends Migration
             'bio'            => $this->text()->null(),
         ], $this->tableOptions);
 
-        $this->addForeignKey('{{%fk_user_profile}}', $this->profileTN, 'user_id', $this->userTN, 'id', $this->cascade, $this->restrict);
+        $this->createFkIdx($this->profileTN, 'user_id', $this->userTN, 'id');
     }
 
     public function down()

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com
@@ -30,7 +30,7 @@ class m140403_174025_create_account_table extends Migration
         ], $this->tableOptions);
 
         $this->createIndex('{{%account_unique}}', $this->accountTN, ['provider', 'client_id'], true);
-        $this->addForeignKey('{{%fk_user_account}}', $this->accountTN, 'user_id', $this->userTN, 'id', $this->cascade, $this->restrict);
+        $this->createFkIdx($this->accountTN, 'user_id', $this->userTN, 'id');
     }
 
     public function down()

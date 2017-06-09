@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com>

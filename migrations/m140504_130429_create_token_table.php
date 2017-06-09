@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com>
@@ -29,7 +29,7 @@ class m140504_130429_create_token_table extends Migration
         ], $this->tableOptions);
 
         $this->createIndex('{{%token_unique}}', $this->tokenTN, ['user_id', 'code', 'type'], true);
-        $this->addForeignKey('{{%fk_user_token}}', $this->tokenTN, 'user_id', $this->userTN, 'id', $this->cascade, $this->restrict);
+        $this->createFkIdx($this->tokenTN, 'user_id', $this->userTN, 'id');
     }
 
     public function down()

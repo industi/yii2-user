@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use industi\yii2\appengine\components\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com>
@@ -42,11 +42,6 @@ class m140504_113157_update_tables extends Migration
         // account table
         $this->renameColumn($this->accountTN, 'data', 'properties');
 
-        // user table
-        if ($this->dbType == 'sqlsrv') {
-            // this is needed because we need to drop the default constraint first
-            $this->dropColumnConstraints($this->userTN, 'flags');
-        }
         $this->dropColumn($this->userTN, 'flags');
         $this->renameColumn($this->userTN, 'registration_ip', 'registered_from');
         $this->addColumn($this->userTN, 'logged_in_at', $this->integer());
