@@ -1,5 +1,8 @@
 <?php
 
+namespace industi\yii2\user\migrations;
+
+use Exception;
 use yii\db\Query;
 use industi\yii2\appengine\components\Migration;
 

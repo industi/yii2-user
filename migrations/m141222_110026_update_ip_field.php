@@ -1,5 +1,7 @@
 <?php
 
+namespace industi\yii2\user\migrations;
+
 /*
  * This file is part of the Dektrium project.
  *
@@ -9,6 +11,7 @@
  * file that was distributed with this source code.
  */
 
+use Exception;
 use industi\yii2\appengine\components\Migration;
 use yii\db\Query;
 

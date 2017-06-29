@@ -1,5 +1,7 @@
 <?php
 
+namespace industi\yii2\user\migrations;
+
 /*
  * This file is part of the Dektrium project.
  *
