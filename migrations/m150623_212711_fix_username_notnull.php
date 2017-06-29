@@ -19,31 +19,13 @@ class m150623_212711_fix_username_notnull extends Migration
 
     public function up()
     {
-        if ($this->dbType == 'pgsql') {
-            $this->alterColumn($this->userTN, 'username', 'SET NOT NULL');
-        } else {
-            if ($this->dbType == 'sqlsrv') {
-                $this->dropIndex('{{%user_unique_username}}', $this->userTN);
-            }
-            $this->alterColumn($this->userTN, 'username', $this->string(255)->notNull());
-            if ($this->dbType == 'sqlsrv') {
-                $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
-            }
-        }
+
+        $this->alterColumn($this->userTN, 'username', $this->string(255)->notNull());
+
     }
 
     public function down()
     {
-        if ($this->dbType == "pgsql") {
-            $this->alterColumn($this->userTN, 'username', 'DROP NOT NULL');
-        } else {
-            if ($this->dbType == 'sqlsrv') {
-                $this->dropIndex('{{%user_unique_username}}', $this->userTN);
-            }
-            $this->alterColumn($this->userTN, 'username', $this->string(255)->null());
-            if ($this->dbType == 'sqlsrv') {
-                $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
-            }
-        }
+        $this->alterColumn($this->userTN, 'username', $this->string(255)->null());
     }
 }
