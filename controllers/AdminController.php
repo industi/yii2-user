@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\filters\AccessRule;
-use dektrium\user\Finder;
-use dektrium\user\models\Profile;
-use dektrium\user\models\User;
-use dektrium\user\models\UserSearch;
-use dektrium\user\helpers\Password;
-use dektrium\user\Module;
-use dektrium\user\traits\EventTrait;
+use industi\yii2\user\filters\AccessRule;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\Profile;
+use industi\yii2\user\models\User;
+use industi\yii2\user\models\UserSearch;
+use industi\yii2\user\helpers\Password;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\EventTrait;
 use yii;
 use yii\base\ExitException;
 use yii\base\Model;

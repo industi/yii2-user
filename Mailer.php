@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user;
+namespace industi\yii2\user;
 
-use dektrium\user\models\Token;
-use dektrium\user\models\User;
+use industi\yii2\user\helpers\Password;
+use industi\yii2\user\models\Token;
+use industi\yii2\user\models\User;
 use Yii;
 use yii\base\Component;
 
@@ -47,7 +48,7 @@ class Mailer extends Component
     /** @var string */
     protected $recoverySubject;
 
-    /** @var \dektrium\user\Module */
+    /** @var Module */
     protected $module;
 
     /**

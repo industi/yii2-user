@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\models;
+namespace industi\yii2\user\models;
 
-use dektrium\user\clients\ClientInterface;
-use dektrium\user\Finder;
-use dektrium\user\models\query\AccountQuery;
-use dektrium\user\traits\ModuleTrait;
+use industi\yii2\user\clients\ClientInterface;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\query\AccountQuery;
+use industi\yii2\user\traits\ModuleTrait;
 use yii\authclient\ClientInterface as BaseClientInterface;
 use yii\db\ActiveRecord;
 use yii\helpers\Json;

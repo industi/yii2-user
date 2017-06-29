@@ -1,9 +1,9 @@
 <?php
 
 
-use dektrium\user\models\Token;
-use dektrium\user\models\User;
-use dektrium\user\Module;
+use industi\yii2\user\models\Token;
+use industi\yii2\user\models\User;
+use industi\yii2\user\Module;
 use tests\_fixtures\UserFixture;
 use tests\_pages\LoginPage;
 use tests\_pages\RegistrationPage;

@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\Finder;
-use dektrium\user\models\Account;
-use dektrium\user\models\LoginForm;
-use dektrium\user\models\User;
-use dektrium\user\Module;
-use dektrium\user\traits\AjaxValidationTrait;
-use dektrium\user\traits\EventTrait;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\Account;
+use industi\yii2\user\models\LoginForm;
+use industi\yii2\user\models\User;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\AjaxValidationTrait;
+use industi\yii2\user\traits\EventTrait;
 use yii\authclient\AuthAction;
 use yii\authclient\ClientInterface;
 use yii\filters\AccessControl;

@@ -9,11 +9,12 @@
  * file that was distributed with this source code.
  */
 
+use industi\yii2\user\models\User;
 use yii\helpers\Html;
-use dektrium\user\widgets\UserMenu;
+use industi\yii2\user\widgets\UserMenu;
 
 /**
- * @var dektrium\user\models\User $user
+ * @var User $user
  */
 
 $user = Yii::$app->user->identity;

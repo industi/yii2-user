@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\widgets;
+namespace industi\yii2\user\widgets;
 
-use dektrium\user\models\LoginForm;
+use industi\yii2\user\models\LoginForm;
 use yii\base\Widget;
 
 /**

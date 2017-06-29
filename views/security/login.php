@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\widgets\Connect;
-use dektrium\user\models\LoginForm;
+use industi\yii2\user\Module;
+use industi\yii2\user\widgets\Connect;
+use industi\yii2\user\models\LoginForm;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var dektrium\user\models\LoginForm $model
- * @var dektrium\user\Module $module
+ * @var LoginForm $model
+ * @var Module $module
  */
 
 $this->title = Yii::t('user', 'Sign in');

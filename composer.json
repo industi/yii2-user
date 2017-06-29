@@ -26,11 +26,11 @@
     },
     "autoload": {
         "psr-4": {
-            "industi\\user\\": ""
+            "industi\\yii2\\user\\": ""
         }
     },
     "extra": {
-        "bootstrap": "industi\\user\\Bootstrap",
+        "bootstrap": "industi\\yii2\\user\\Bootstrap",
         "branch-alias": {
             "dev-master": "0.9.x-dev",
             "dev-develop": "1.0.x-dev"

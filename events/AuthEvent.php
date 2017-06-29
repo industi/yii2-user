@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\events;
+namespace industi\yii2\user\events;
 
-use dektrium\user\models\Account;
+use industi\yii2\user\models\Account;
 use yii\authclient\ClientInterface;
 use yii\base\Event;
 

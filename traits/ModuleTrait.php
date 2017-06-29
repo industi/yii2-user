@@ -1,9 +1,9 @@
 <?php
 
 
-namespace dektrium\user\traits;
+namespace industi\yii2\user\traits;
 
-use dektrium\user\Module;
+use industi\yii2\user\Module;
 
 /**
  * Trait ModuleTrait

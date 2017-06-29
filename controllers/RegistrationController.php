@@ -9,14 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\Finder;
-use dektrium\user\models\RegistrationForm;
-use dektrium\user\models\ResendForm;
-use dektrium\user\models\User;
-use dektrium\user\traits\AjaxValidationTrait;
-use dektrium\user\traits\EventTrait;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\RegistrationForm;
+use industi\yii2\user\models\ResendForm;
+use industi\yii2\user\models\User;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\AjaxValidationTrait;
+use industi\yii2\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -25,7 +26,7 @@ use yii\web\NotFoundHttpException;
  * RegistrationController is responsible for all registration process, which includes registration of a new account,
  * resending confirmation tokens, email confirmation and registration via social networks.
  *
- * @property \dektrium\user\Module $module
+ * @property Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

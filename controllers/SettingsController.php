@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\Finder;
-use dektrium\user\models\Profile;
-use dektrium\user\models\SettingsForm;
-use dektrium\user\models\User;
-use dektrium\user\Module;
-use dektrium\user\traits\AjaxValidationTrait;
-use dektrium\user\traits\EventTrait;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\Profile;
+use industi\yii2\user\models\SettingsForm;
+use industi\yii2\user\models\User;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\AjaxValidationTrait;
+use industi\yii2\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -27,7 +27,7 @@ use yii\web\NotFoundHttpException;
 /**
  * SettingsController manages updating user settings (e.g. profile, email and password).
  *
- * @property \dektrium\user\Module $module
+ * @property Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

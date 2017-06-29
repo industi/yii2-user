@@ -9,9 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\Finder;
+use industi\yii2\user\Finder;
+use industi\yii2\user\Module;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -19,7 +20,7 @@ use yii\web\NotFoundHttpException;
 /**
  * ProfileController shows users profiles.
  *
- * @property \dektrium\user\Module $module
+ * @property Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

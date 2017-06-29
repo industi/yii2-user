@@ -9,9 +9,9 @@ Let's start with overriding the registration form model:
 ```php
 namespace app\models;
 
-use dektrium\user\models\Profile;
-use dektrium\user\models\RegistrationForm as BaseRegistrationForm;
-use dektrium\user\models\User;
+use industi\yii2\user\models\Profile;
+use industi\yii2\user\models\RegistrationForm as BaseRegistrationForm;
+use industi\yii2\user\models\User;
 
 class RegistrationForm extends BaseRegistrationForm
 {

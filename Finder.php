@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user;
+namespace industi\yii2\user;
 
-use dektrium\user\models\query\AccountQuery;
-use dektrium\user\models\Token;
+use industi\yii2\user\models\query\AccountQuery;
+use industi\yii2\user\models\Token;
 use yii\authclient\ClientInterface;
 use yii\base\Object;
 use yii\db\ActiveQuery;

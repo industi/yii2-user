@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\models;
+namespace industi\yii2\user\models;
 
-use dektrium\user\Finder;
+use industi\yii2\user\Finder;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;

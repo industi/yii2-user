@@ -9,13 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\controllers;
+namespace industi\yii2\user\controllers;
 
-use dektrium\user\Finder;
-use dektrium\user\models\RecoveryForm;
-use dektrium\user\models\Token;
-use dektrium\user\traits\AjaxValidationTrait;
-use dektrium\user\traits\EventTrait;
+use industi\yii2\user\Finder;
+use industi\yii2\user\models\RecoveryForm;
+use industi\yii2\user\models\Token;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\AjaxValidationTrait;
+use industi\yii2\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -23,7 +24,7 @@ use yii\web\NotFoundHttpException;
 /**
  * RecoveryController manages password recovery process.
  *
- * @property \dektrium\user\Module $module
+ * @property Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

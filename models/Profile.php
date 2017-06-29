@@ -9,9 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\models;
+namespace industi\yii2\user\models;
 
-use dektrium\user\traits\ModuleTrait;
+use industi\yii2\user\Module;
+use industi\yii2\user\traits\ModuleTrait;
 use yii\db\ActiveRecord;
 
 /**
@@ -33,7 +34,7 @@ use yii\db\ActiveRecord;
 class Profile extends ActiveRecord
 {
     use ModuleTrait;
-    /** @var \dektrium\user\Module */
+    /** @var Module */
     protected $module;
 
     /** @inheritdoc */

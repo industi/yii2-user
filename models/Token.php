@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\models;
+namespace industi\yii2\user\models;
 
-use dektrium\user\traits\ModuleTrait;
+use industi\yii2\user\traits\ModuleTrait;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Url;

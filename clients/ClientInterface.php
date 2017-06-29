@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace dektrium\user\clients;
+namespace industi\yii2\user\clients;
 
 use yii\authclient\ClientInterface as BaseInterface;
 
