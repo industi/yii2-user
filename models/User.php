@@ -87,7 +87,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     protected function getFinder()
     {
-        return \Yii::$container->get(Finder::className());
+        /** @var $finder Finder */
+        $finder = \Yii::$container->get(Finder::className());
+        return $finder;
     }
 
     /**
@@ -96,7 +98,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     protected function getMailer()
     {
-        return \Yii::$container->get(Mailer::className());
+        /** @var $mailer Mailer */
+        $mailer = \Yii::$container->get(Mailer::className());
+        return $mailer;
     }
 
     /**
@@ -550,7 +554,7 @@ class User extends ActiveRecord implements IdentityInterface
     /** @inheritdoc */
     public static function tableName()
     {
-        return '{{%user}}';
+        return 'usrUser';
     }
 
     /** @inheritdoc */

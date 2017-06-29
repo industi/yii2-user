@@ -16,9 +16,12 @@ use industi\yii2\user\Finder;
 use industi\yii2\user\models\query\AccountQuery;
 use industi\yii2\user\traits\ModuleTrait;
 use yii\authclient\ClientInterface as BaseClientInterface;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\db\ActiveRecordInterface;
 use yii\helpers\Json;
 use yii\helpers\Url;
+use yii\web\IdentityInterface;
 
 /**
  * @property integer $id          Id
@@ -49,11 +52,11 @@ class Account extends ActiveRecord
     /** @inheritdoc */
     public static function tableName()
     {
-        return '{{%social_account}}';
+        return 'usrSocialAccount';
     }
 
     /**
-     * @return User
+     * @return ActiveQuery
      */
     public function getUser()
     {
@@ -107,7 +110,9 @@ class Account extends ActiveRecord
      */
     public static function find()
     {
-        return \Yii::createObject(AccountQuery::className(), [get_called_class()]);
+        /** @var AccountQuery $accountQuery  */
+        $accountQuery = \Yii::createObject(AccountQuery::className(), [get_called_class()]);
+        return $accountQuery;
     }
 
     public static function create(BaseClientInterface $client)
@@ -152,7 +157,10 @@ class Account extends ActiveRecord
         $account = static::fetchAccount($client);
 
         if ($account->user === null) {
-            $account->link('user', \Yii::$app->user->identity);
+
+            /** @var  $identityInterface  ActiveRecordInterface*/
+            $identityInterface = \Yii::$app->user->identity;
+            $account->link('user', $identityInterface);
             \Yii::$app->session->setFlash('success', \Yii::t('user', 'Your account has been connected'));
         } else {
             \Yii::$app->session->setFlash(
@@ -216,7 +224,7 @@ class Account extends ActiveRecord
         if (!$user->validate(['username'])) {
             $account->username = null;
         }
-
+        /** @var $user User */
         return $user->create() ? $user : false;
     }
 

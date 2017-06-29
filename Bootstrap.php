@@ -27,16 +27,16 @@ class Bootstrap implements BootstrapInterface
 {
     /** @var array Model's map */
     private $_modelMap = [
-        'User'             => 'dektrium\user\models\User',
-        'Account'          => 'dektrium\user\models\Account',
-        'Profile'          => 'dektrium\user\models\Profile',
-        'Token'            => 'dektrium\user\models\Token',
-        'RegistrationForm' => 'dektrium\user\models\RegistrationForm',
-        'ResendForm'       => 'dektrium\user\models\ResendForm',
-        'LoginForm'        => 'dektrium\user\models\LoginForm',
-        'SettingsForm'     => 'dektrium\user\models\SettingsForm',
-        'RecoveryForm'     => 'dektrium\user\models\RecoveryForm',
-        'UserSearch'       => 'dektrium\user\models\UserSearch',
+        'User'             => 'industi\yii2\user\models\User',
+        'Account'          => 'industi\yii2\user\models\Account',
+        'Profile'          => 'industi\yii2\user\models\Profile',
+        'Token'            => 'industi\yii2\user\models\Token',
+        'RegistrationForm' => 'industi\yii2\user\models\RegistrationForm',
+        'ResendForm'       => 'industi\yii2\user\models\ResendForm',
+        'LoginForm'        => 'industi\yii2\user\models\LoginForm',
+        'SettingsForm'     => 'industi\yii2\user\models\SettingsForm',
+        'RecoveryForm'     => 'industi\yii2\user\models\RecoveryForm',
+        'UserSearch'       => 'industi\yii2\user\models\UserSearch',
     ];
 
     /** @inheritdoc */
@@ -47,7 +47,7 @@ class Bootstrap implements BootstrapInterface
         if ($app->hasModule('user') && ($module = $app->getModule('user')) instanceof Module) {
             $this->_modelMap = array_merge($this->_modelMap, $module->modelMap);
             foreach ($this->_modelMap as $name => $definition) {
-                $class = "dektrium\\user\\models\\" . $name;
+                $class = "industi\\yii2\\user\\models\\" . $name;
                 Yii::$container->set($class, $definition);
                 $modelName = is_array($definition) ? $definition['class'] : $definition;
                 $module->modelMap[$name] = $modelName;
@@ -66,7 +66,7 @@ class Bootstrap implements BootstrapInterface
             ]);
 
             if ($app instanceof ConsoleApplication) {
-                $module->controllerNamespace = 'dektrium\user\commands';
+                $module->controllerNamespace = 'industi\yii2\user\commands';
             } else {
                 Yii::$container->set('yii\web\User', [
                     'enableAutoLogin' => true,
@@ -103,7 +103,7 @@ class Bootstrap implements BootstrapInterface
                 ];
             }
 
-            Yii::$container->set('dektrium\user\Mailer', $module->mailer);
+            Yii::$container->set('industi\yii2\user\Mailer', $module->mailer);
 
             $module->debug = $this->ensureCorrectDebugSetting();
         }

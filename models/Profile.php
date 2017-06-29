@@ -101,6 +101,7 @@ class Profile extends ActiveRecord
      * Adds an error when the specified time zone doesn't exist.
      * @param string $attribute the attribute being validated
      * @param array $params values for the placeholders in the error message
+     * @todo verify param $params - not use
      */
     public function validateTimeZone($attribute, $params)
     {
@@ -164,6 +165,6 @@ class Profile extends ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%profile}}';
+        return 'usrProfile';
     }
 }
