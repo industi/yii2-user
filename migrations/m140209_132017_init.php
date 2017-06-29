@@ -41,7 +41,7 @@ class m140209_132017_init extends Migration
             'logged_in_at'         => $this->integer()->null(),
             'created_at'           => $this->integer()->notNull(),
             'updated_at'           => $this->integer()->notNull(),
-        ], $this->tableOptions);
+        ]);
 
         // @TODO zaimplementowac tworzenie indeksów w AppEngine
         $this->createIndex('{{%user_unique_username}}', $this->userTN, 'username', true);
@@ -58,7 +58,7 @@ class m140209_132017_init extends Migration
             'location'       => $this->string(255)->null(),
             'website'        => $this->string(255)->null(),
             'bio'            => $this->text()->null(),
-        ], $this->tableOptions);
+        ]);
 
         $this->createFkIdx($this->profileTN, 'user_id', $this->userTN, 'id');
     }

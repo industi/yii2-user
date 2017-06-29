@@ -29,7 +29,7 @@ class m140403_174025_create_account_table extends Migration
             'provider' => $this->string()->notNull(),
             'client_id' => $this->string()->notNull(),
             'properties' => $this->text()->null(),
-        ], $this->tableOptions);
+        ]);
 
         $this->createIndex('{{%account_unique}}', $this->accountTN, ['provider', 'client_id'], true);
         $this->createFkIdx($this->accountTN, 'user_id', $this->userTN, 'id');

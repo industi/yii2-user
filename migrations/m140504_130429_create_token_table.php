@@ -28,7 +28,7 @@ class m140504_130429_create_token_table extends Migration
             'code'       => $this->string(32)->notNull(),
             'created_at' => $this->integer()->notNull(),
             'type'       => $this->smallInteger()->notNull(),
-        ], $this->tableOptions);
+        ]);
 
         $this->createIndex('{{%token_unique}}', $this->tokenTN, ['user_id', 'code', 'type'], true);
         $this->createFkIdx($this->tokenTN, 'user_id', $this->userTN, 'id');
