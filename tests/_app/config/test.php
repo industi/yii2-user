@@ -5,15 +5,15 @@ return [
     'basePath' => dirname(__DIR__),
     'language' => 'en-US',
     'aliases' => [
-        '@dektrium/user' => dirname(dirname(dirname(__DIR__))),
+        '@industi/yii2-user2' => dirname(dirname(dirname(__DIR__))),
         '@tests' => dirname(dirname(__DIR__)),
         '@vendor' => VENDOR_DIR,
         '@bower' => VENDOR_DIR . '/bower-asset',
     ],
-    'bootstrap' => ['dektrium\user\Bootstrap'],
+    'bootstrap' => ['industi\yii2\user\Bootstrap'],
     'modules' => [
         'user' => [
-            'class' => 'dektrium\user\Module',
+            'class' => 'indsuti\yii2\user\Module',
             'admins' => ['user'],
         ],
     ],

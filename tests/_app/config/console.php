@@ -4,7 +4,7 @@ return [
     'id' => 'yii2-test-console',
     'basePath' => dirname(__DIR__),
     'aliases' => [
-        '@dektrium/user' => dirname(dirname(dirname(__DIR__))),
+        '@industi/yii2-user2' => dirname(dirname(dirname(__DIR__))),
         '@tests' => dirname(dirname(__DIR__)),
     ],
     'components' => [

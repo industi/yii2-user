@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\rbac\widgets\Assignments;
+use industi\yii2\rbac\widgets\Assignments;
 
 /**
  * @var yii\web\View $this
@@ -17,7 +17,7 @@ use dektrium\rbac\widgets\Assignments;
  */
 ?>
 
-<?php $this->beginContent('@dektrium/user/views/admin/update.php', ['user' => $user]) ?>
+<?php $this->beginContent('@vendor/industi/yii2-user2/views/admin/update.php', ['user' => $user]) ?>
 
 <?= yii\bootstrap\Alert::widget([
     'options' => [
