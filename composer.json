@@ -17,7 +17,7 @@
         "yiisoft/yii2-swiftmailer": "^2.0.0",
         "yiisoft/yii2-authclient": "^2.1.0",
         "yiisoft/yii2-bootstrap": "^2.0.0",
-        "industi/yii2-appengine": "~0.2.1"
+        "industi/yii2-appengine": "dev-trunk"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "^2.0.0",
