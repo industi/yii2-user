@@ -25,6 +25,7 @@ use yii\i18n\PhpMessageSource;
  */
 class Bootstrap implements BootstrapInterface
 {
+
     /** @var array Model's map */
     private $_modelMap = [
         'User'             => 'industi\yii2\user\models\User',
