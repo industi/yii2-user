@@ -26,17 +26,17 @@ use yii\bootstrap\Nav;
         [
             'label' => Yii::t('user', 'Roles'),
             'url' => ['/rbac/role/index'],
-            'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+            'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
         ],
         [
             'label' => Yii::t('user', 'Permissions'),
             'url' => ['/rbac/permission/index'],
-            'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+            'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
         ],
         [
             'label' => \Yii::t('user', 'Rules'),
             'url'   => ['/rbac/rule/index'],
-            'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+            'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
         ],
         [
             'label' => Yii::t('user', 'Create'),
@@ -48,17 +48,17 @@ use yii\bootstrap\Nav;
                 [
                     'label' => Yii::t('user', 'New role'),
                     'url' => ['/rbac/role/create'],
-                    'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+                    'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
                 ],
                 [
                     'label' => Yii::t('user', 'New permission'),
                     'url' => ['/rbac/permission/create'],
-                    'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+                    'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
                 ],
                 [
                     'label' => \Yii::t('user', 'New rule'),
                     'url'   => ['/rbac/rule/create'],
-                    'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+                    'visible' => isset(Yii::$app->extensions['industi/yii2-rbac']),
                 ]
             ],
         ],
