@@ -13,8 +13,6 @@ namespace industi\yii2\user;
 
 use industi\yii2\user\models\query\AccountQuery;
 use industi\yii2\user\models\Token;
-use yii\authclient\ClientInterface;
-use yii\base\Object;
 use yii\db\ActiveQuery;
 
 /**
