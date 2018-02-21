@@ -13,6 +13,7 @@ namespace industi\yii2\user;
 
 use industi\yii2\user\models\query\AccountQuery;
 use industi\yii2\user\models\Token;
+use yii\base\BaseObject;
 use yii\db\ActiveQuery;
 
 /**
@@ -20,7 +21,7 @@ use yii\db\ActiveQuery;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class Finder extends Object
+class Finder extends BaseObject
 {
     /** @var ActiveQuery */
     protected $userQuery;
